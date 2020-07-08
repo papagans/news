@@ -27,28 +27,7 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'webapp:index' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
-{#            <li class="nav-item active">#}
-{#                                    <div class="dropdown-menu mt-0 rounded-0" aria-labelledby="navbarDropdownMenuLink">#}
-{#                            {% for category in categories %}#}
-{#                                <div class="dropdown-item dropright">#}
-{#                                    <a class="category nav-link d-flex align-items-center pl-0"#}
-{#                                       href="{% url 'webapp:category_edit' category.pk %}?category={{ category.pk }}"#}
-{#                                       id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown"#}
-{#                                       aria-haspopup="true" aria-expanded="false">#}
-{#                                        <a href="{% url 'webapp:category_edit' category.pk %}?category={{ category.pk }}"#}
-{#                                           class="category nav-link dropdown-toggle d-flex align-items-center pl-0">#}
-{#                                            <p>{{ category.category_name }}</p></a>#}
-{#                                    </a>#}
-{#                                    <div class="dropdown-menu m-0" aria-labelledby="navbarDropdownMenuLink2">#}
-{#                                        {% for subcategory in category.subcategories.all %}#}
-{#                                            <a class="dropdown-item"#}
-{#                                               href="{% url 'webapp:category_edit' subcategory.pk %}?category={{ subcategory.pk }}">{{ subcategory.sub_name }}</a>#}
-{#                                        {% endfor %}#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            {% endfor %}#}
-{#                        </div>#}
-{#            </li>#}
+            {% if user.is_authenticated %}
                 <li class="nav-item dropdown">
                     <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -62,6 +41,8 @@
                         <div class="dropdown-divider"></div>
                     </div>
                 </li>
+            {% endif %}
+            {% if perms.webapp.product_add %}
                 <li class="nav-item dropdown">
                     <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -74,6 +55,7 @@
                         <div class="dropdown-divider"></div>
                     </div>
                 </li>
+            {% endif %}
                 {% if user.is_authenticated %}
                     <li class="nav-item active">
                         <a class="nav-link"
@@ -94,28 +76,12 @@
         </div>
     </div>
 </nav>
-{#      <div class="container">#}
-{#  <div class="row">#}
-{#  <div class="col-4">#}
-{#    <div class="list-group" id="list-tab" role="tablist">#}
-{#      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>#}
-{#      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>#}
-{#      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>#}
-{#      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>#}
-{#    </div>#}
-{#  </div>#}
-{#  <div class="col-8">#}
-{#    <div class="tab-content" id="nav-tabContent">#}
-{#      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>#}
-{#      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>#}
-{#      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>#}
-{#      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>#}
-{#    </div>#}
-{#  </div>#}
-{#</div>#}
-{#      </div>#}
 <div class="container">
+{% if user.is_authenticated %}
     {% block content %}{% endblock %}
+    {% else %}
+    {% block login %}{% endblock %}
+{% endif %}
 </div>
 
 

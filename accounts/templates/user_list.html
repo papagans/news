@@ -5,7 +5,7 @@
     <form method="POST" action="#">
         {% csrf_token %}
         <table class="table" style="line-height: 15px">
-            <h3>Категории</h3>
+            <h3 style="text-align: center">Пользователи</h3>
             {#            {% if perms.webapp.add_category %}#}
             {#            <div class="row">#}
             <a href="{% url 'accounts:user_add' %}" class="btn ml-5 my-3 hiddenbutton"
