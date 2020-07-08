@@ -5,7 +5,8 @@ from django.views.generic import ListView, CreateView, DetailView, DeleteView, U
 from .models import Article, Category
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.urls import reverse_lazy
-from .forms import CategoryForm
+from .forms import CategoryForm, FullSearchForm
+from django.db.models import Q
 
 
 class IndexView(ListView):
@@ -116,3 +117,31 @@ class ArticleListView(ListView):
         context['articles'] = Article.objects.filter(category_id=self.kwargs.get('pk'))
         self.get_url()
         return context
+
+
+class SearchResultsView(ListView):
+    model = Article
+    template_name = 'index.html'
+    context_object_name = 'articles'
+    # paginate_by = 2
+    # paginate_orphans = 1
+
+    def get_url(self):
+        global site
+        site = self.request.get_full_path()
+        return site
+
+    def get_context_data(self, *, text=None, **kwargs):
+        form = FullSearchForm(data=self.request.GET)
+        if form.is_valid():
+            text = form.cleaned_data.get("text")
+            query = self.get_query_string()
+            articles = Article.objects.filter(Q(title__icontains=text))
+            return super().get_context_data(form=form, query=query, articles=articles)
+
+    def get_query_string(self):
+        data = {}
+        for key in self.request.GET:
+            if key != 'page':
+                data[key] = self.request.GET.get(key)
+        return data

@@ -15,3 +15,7 @@ class CategoryForm(forms.ModelForm):
             raise ValidationError('Категория с таким названием уже существует!')
         else:
             return title
+
+
+class FullSearchForm(forms.Form):
+    text = forms.CharField(max_length=20, required=False, label='Поиск')
