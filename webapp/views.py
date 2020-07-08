@@ -44,6 +44,19 @@ class ArticleCreateView(UserPassesTestMixin, CreateView):
         return user.is_staff
 
 
+class ArticleDeleteView(UserPassesTestMixin, DeleteView):
+    model = Article
+    context_object_name = 'object'
+    template_name = 'partial/delete.html'
+    success_url = reverse_lazy('webapp:index')
+    permission_required = "webapp.delete_article"
+    permission_denied_message = "Доступ запрещен"
+
+    def test_func(self):
+        user = self.request.user
+        return user.is_staff
+
+
 class CategoryView(ListView):
     template_name = 'categories.html'
     model = Category
