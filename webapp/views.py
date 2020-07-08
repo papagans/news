@@ -13,6 +13,11 @@ class IndexView(ListView):
     model = Article
     context_object_name = "articles"
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data()
+        context['categories'] = Category.objects.all()
+        return context
+
 
 class ArticleView(DetailView):
     template_name = 'article_detail.html'
@@ -100,3 +105,20 @@ class CategoryCreateView(UserPassesTestMixin, CreateView):
     def test_func(self):
         user = self.request.user
         return user.is_staff
+
+
+class ArticleListView(ListView):
+    template_name = 'index.html'
+    model = Article
+
+    def get_url(self):
+        global site
+        site = self.request.path
+        return site
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data()
+        context['categories'] = Category.objects.all()
+        context['articles'] = Article.objects.filter(category_id=self.kwargs.get('pk'))
+        self.get_url()
+        return context

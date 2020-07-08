@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from .views import IndexView, ArticleView, CategoryView, CategoryUpdateView, CategoryDeleteView, CategoryCreateView, \
-    ArticleUpdateView, ArticleCreateView, ArticleDeleteView
+    ArticleUpdateView, ArticleCreateView, ArticleDeleteView, ArticleListView
 
 app_name ='webapp'
 
@@ -17,4 +17,5 @@ urlpatterns = [
     path('category/edit/<int:pk>/', CategoryUpdateView.as_view(), name='category_edit'),
     path('category/delete/<int:pk>/', CategoryDeleteView.as_view(), name='category_delete'),
     path('category/add/', CategoryCreateView.as_view(), name='category_add'),
+    path('article_category/<int:pk>', ArticleListView.as_view(), name='article_category'),
 ]
