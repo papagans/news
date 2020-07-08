@@ -29,20 +29,20 @@
                 <tr style="background-color: lavender">
                     <th scope="row">{{ forloop.counter }}</th>
                     <td><a href="{% url 'accounts:user_detail' user.pk %}"> {{ user.username }}</a></td>
-                    <td class="symbol">{% if user.email%}
+                    <td class="symbol">{% if user.email %}
                         {{ user.email }}{% endif %}</td>
                     {#                        <td class="symbol"><a href="{% url 'webapp:subcategory_add' category.pk %}" class="add hiddenbutton">+</a></td>#}
 
-                    {% if perms.webapp.change_category %}
+                    {% if perms.webapp.change_user %}
                         <td class="symbol"><a class='update hiddenbutton'
                                               href="{% url 'accounts:user_edit' user.pk %}">&#x270E;</a></td>
                     {% endif %}
-{#                    {% if perms.webapp.delete_category %}#}
-{#                        <td class="symbol"><a class='delete hiddenbutton'#}
-{#                                              href="{% url 'webapp:category_delete' category.pk %}" style="color: red">&times;</a>#}
+                    {% if perms.webapp.delete_user %}
+                        <td class="symbol"><a class='delete hiddenbutton'
+                                              href="{% url 'accounts:user_delete' user.pk %}" style="color: red">&times;</a>
                         </td>
-                        </tr>
-{#                    {% endif %}#}
+                    {% endif %}
+                </tr>
                 </tbody>
             {% endfor %}
         </table>

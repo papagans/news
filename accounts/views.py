@@ -2,10 +2,11 @@ from django.contrib.auth.mixins import UserPassesTestMixin
 
 # Create your views here.
 from django.contrib.auth.models import User
-from django.views.generic import DetailView, ListView, UpdateView
+from django.views.generic import DetailView, ListView, UpdateView, DeleteView
 from .forms import UserCreationForm
 from django.urls import reverse_lazy, reverse
 from django.shortcuts import render, redirect
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 
 class UserDetailView(DetailView):
@@ -22,17 +23,27 @@ class UserListView(ListView):
 
 class UserUpdateView(UpdateView):
     model = User
-    # template_name = 'user_update.html'
     context_object_name = 'user_object'
     template_name = 'partial/edit.html'
     fields = ['username', 'email']
-    # success_url = reverse_lazy('accounts:user_list', kwargs={"pk": object.pk})
 
-    # def test_func(self):
-    #     return self.get_object() == self.request.user
+    def test_func(self):
+        return self.get_object() == self.request.user
 
     def get_success_url(self):
         return reverse('accounts:user_detail', kwargs={"pk": self.object.pk})
+
+
+class UserDeleteView(UserPassesTestMixin, DeleteView):
+    model = User
+    context_object_name = 'object'
+    template_name = 'partial/delete.html'
+    success_url = reverse_lazy('accounts:user_list')
+    permission_denied_message = "Доступ запрещен"
+
+    def test_func(self):
+        user = self.request.user
+        return user.is_staff
 
 
 def register_view(request):
