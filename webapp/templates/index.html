@@ -17,7 +17,9 @@
                         <p class="card-text text-truncate">{{ article.description }}</p>
                         <div class="card-body">
                             <a href="{% url 'webapp:article_detail' article.pk %}" class="card-link">Подробнее...</a>
+                            {% if perms.webapp.article_edit %}
                             <a href="{% url 'webapp:article_edit' article.pk %}" class="card-link">Редактировать</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

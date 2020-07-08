@@ -15,7 +15,6 @@ class IndexView(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data()
-        context['categories'] = Category.objects.all()
         return context
 
 
@@ -40,7 +39,6 @@ class ArticleUpdateView(UserPassesTestMixin, UpdateView):
 class ArticleCreateView(UserPassesTestMixin, CreateView):
     model = Article
     template_name = 'partial/add.html'
-    # form_class = CategoryForm
     fields = ['title', 'description', 'image', 'user_id', 'category_id']
     success_url = reverse_lazy('webapp:index')
 
@@ -78,9 +76,6 @@ class CategoryUpdateView(UserPassesTestMixin, UpdateView):
     def test_func(self):
         user = self.request.user
         return user.is_staff
-    #
-    # def get_success_url(self):
-    #     return reverse('webapp:categories')
 
 
 class CategoryDeleteView(UserPassesTestMixin, DeleteView):
@@ -118,7 +113,6 @@ class ArticleListView(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data()
-        context['categories'] = Category.objects.all()
         context['articles'] = Article.objects.filter(category_id=self.kwargs.get('pk'))
         self.get_url()
         return context
