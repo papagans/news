@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 
 class Category(models.Model):
     title = models.CharField(max_length=50, verbose_name='Категория')
-    parent_id = models.ForeignKey("Category", related_name='parent_id', on_delete=models.PROTECT, null=True, blank=True,
-                                  verbose_name="Подкатегории")
+    subcategory = models.ForeignKey("Category", on_delete=models.PROTECT, null=True,
+                                    blank=True, verbose_name="Подкатегории")
 
     def __str__(self):
         return self.title
@@ -24,3 +24,10 @@ class Article(models.Model):
     title = models.CharField(max_length=200, verbose_name='Название')
     description = models.TextField(max_length=3000, verbose_name='Описание', null=True, blank=True)
     image = models.ImageField(upload_to='article_image', null=True, blank=True, verbose_name='Фото')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Новость'
+        verbose_name_plural = 'Новости'
