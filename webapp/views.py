@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
 from .models import Article, Category
 from django.contrib.auth.mixins import UserPassesTestMixin
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse_lazy
 from .forms import CategoryForm
 
 
@@ -53,7 +53,7 @@ class CategoryView(ListView):
 class CategoryUpdateView(UserPassesTestMixin, UpdateView):
     model = Category
     template_name = 'partial/edit.html'
-    fields = ['title']
+    fields = ['title', 'subcategory']
     context_object_name = 'category'
     success_url = reverse_lazy('webapp:categories')
 

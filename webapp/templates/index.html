@@ -2,27 +2,27 @@
 {% load static %}
 {% block title %}NEWS{% endblock %}
 {% block content %}
-        <div class="row row-cols-1 row-cols-md-3">
+    <div class="row row-cols-1 row-cols-md-3">
         {% for article in articles %}
-        <div class="col mb-4">
-        <div class="card h-100">
-            {% if article.image %}
-                <img src="{{ article.image.url }}" class="card-img-top" alt="{{ category.category_name }}">
-            {% else %}
-                <img src="{% static 'default_image.png' %}" class="card-img-top" alt="No photo">
-            {% endif %}
-      <div class="card-body">
-        <h5 class="card-title">{{ article.title }}</h5>
-        <p class="card-text">{{ article.description }}</p>
-          <div class="card-body">
-          <a href="{% url 'webapp:article_detail' article.pk %}" class="card-link">Подробнее...</a>
-        <a href="{% url 'webapp:article_edit' article.pk %}" class="card-link">Редактировать</a>
-          </div>
-      </div>
-    </div>
-        </div>
+            <div class="col mb-4">
+                <div class="card h-100">
+                    {% if article.image %}
+                        <img src="{{ article.image.url }}" class="card-img-top" alt="{{ category.category_name }}">
+                    {% else %}
+                        <img src="{% static 'default_image.png' %}" class="card-img-top" alt="No photo">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ article.title }}</h5>
+                        <p class="card-text text-truncate">{{ article.description }}</p>
+                        <div class="card-body">
+                            <a href="{% url 'webapp:article_detail' article.pk %}" class="card-link">Подробнее...</a>
+                            <a href="{% url 'webapp:article_edit' article.pk %}" class="card-link">Редактировать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    {% endfor %}
-</div>
+        {% endfor %}
+    </div>
 
 {% endblock %}

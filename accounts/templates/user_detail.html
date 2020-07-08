@@ -3,18 +3,19 @@
 {% block title %}User Detail{% endblock %}
 {% block content %}
     <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+  <img src="..." class="card-img-top" alt="{{ user.username }}">
   <div class="card-body">
-    <h5 class="card-title">{{ username }}</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 class="card-title">{{ user.username }}</h5>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">{% if user.email %}{{ user.email }}{% endif %}</li>
     <li class="list-group-item">Dapibus ac facilisis in</li>
     <li class="list-group-item">Vestibulum at eros</li>
   </ul>
   <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
+      {% if perms.webapp.change_category %}
+          <a class='card-link' href="{% url 'accounts:user_edit' user.pk %}">Редактировать</a></a>
+                    {% endif %}
     <a href="#" class="card-link">Another link</a>
   </div>
 </div>

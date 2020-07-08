@@ -27,9 +27,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'webapp:index' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'webapp:categories' %}">Категории</a>
-                </li>
+                {#                <li class="nav-item">#}
+                {#                    <a class="nav-link" href="{% url 'webapp:categories' %}">Категории</a>#}
+                {#                </li>#}
                 <li class="nav-item dropdown">
                     <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -37,7 +37,8 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{% url 'webapp:article_add' %}">Добавить новость</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="{% url 'webapp:categories' %}">Категории</a>
+                        <a class="dropdown-item" href="{% url 'accounts:user_list' %}">Пользователи</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>

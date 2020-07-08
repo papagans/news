@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 class CategoryForm(forms.ModelForm):
     class Meta:
         model = Category
-        fields = ['title']
+        fields = ['title', 'subcategory']
 
     def clean_category_name(self):
         title = self.cleaned_data.get('title')

@@ -3,10 +3,16 @@
 {% block title %}Article{% endblock %}
 {% block content %}
     <div class="jumbotron">
-  <h1 class="display-4">{{ article.title }}</h1>
-  <p class="lead">{{ article.description }}</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-</div>
+        {% if article.image %}
+            <img src="{{ article.image.url }}" class="card-img-top" alt="{{ category.category_name }}">
+        {% else %}
+            <img src="{% static 'default_image.png' %}" class="card-img-top" alt="No photo">
+        {% endif %}
+        <h1 class="display-4">{{ article.title }}</h1>
+        <p class="lead">{{ article.description }}</p>
+        <hr class="my-4">
+        {#  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>#}
+        <a class="btn btn-primary btn-lg" href="{% url 'webapp:article_edit' article.pk %}"
+           role="button">Редактировать</a>
+    </div>
 {% endblock %}

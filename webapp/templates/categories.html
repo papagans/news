@@ -2,31 +2,37 @@
 {% load static %}
 {% block title %}Categories{% endblock %}
 {% block content %}
-<form method="POST" action="#">
+    <form method="POST" action="#">
         {% csrf_token %}
-        <table class="table"  style="line-height: 15px">
+        <table class="table" style="line-height: 15px">
             <h3>Категории</h3>
             {#            {% if perms.webapp.add_category %}#}
-{#            <div class="row">#}
-                <a href="{% url 'webapp:category_add' %}" class="btn ml-5 my-3 hiddenbutton" style="background-color: #83B734; color: white">Добавить
-                    категорию</a>
+            {#            <div class="row">#}
+            <a href="{% url 'webapp:category_add' %}" class="btn ml-5 my-3 hiddenbutton"
+               style="background-color: #83B734; color: white">Добавить
+                категорию</a>
             </div>
             {#            {% endif %}#}
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Название</th>
+                <th scope="col">Родительская категория</th>
+                <th class="symbol hiddenbutton" scope="col">Категория</th>
                 <th class="symbol hiddenbutton" scope="col">Редактировать</th>
                 <th class="symbol hiddenbutton" scope="col">Удалить</th>
-                <th class="symbol hiddenbutton" scope="col">Добавить
-                    подраздел</th>
+                {#                <th class="symbol hiddenbutton" scope="col">Добавить#}
+                {#                    подраздел</th>#}
             </tr>
             </thead>
             {% for category in categories %}
                 <tbody>
                 <tr style="background-color: lavender">
                     <th scope="row">{{ forloop.counter }}</th>
-                    <td>{{ category.title}}</td>
+                    <td>{% if category.subcategory %}{{ category.subcategory }}{% endif %}</td>
+                    <td class="symbol">{% if category.title %}
+                        {{ category.title }}{% endif %}</td>
+                    {#                        <td class="symbol"><a href="{% url 'webapp:subcategory_add' category.pk %}" class="add hiddenbutton">+</a></td>#}
+
                     {% if perms.webapp.change_category %}
                         <td class="symbol"><a class='update hiddenbutton'
                                               href="{% url 'webapp:category_edit' category.pk %}">&#x270E;</a></td>
@@ -35,27 +41,26 @@
                         <td class="symbol"><a class='delete hiddenbutton'
                                               href="{% url 'webapp:category_delete' category.pk %}" style="color: red">&times;</a>
                         </td>
+                        </tr>
                     {% endif %}
-{#                        <td class="symbol"><a href="{% url 'webapp:subcategory_add' category.pk %}" class="add hiddenbutton">+</a></td>#}
-                </tr>
-{#                {% for subcategory in category.subcategories.all %}#}
-{#                    <tr>#}
-{#                        <th scope="row"></th>#}
-{#                        <th scope="row"></th>#}
-{#                        <td style="padding-left: 40px; font-size: 12px">{{ subcategory.sub_name }}</td>#}
-{#                        {% if perms.webapp.change_subcategory %}#}
-{#                            <td class="symbol"><a class='update hiddenbutton'#}
-{#                                                  href="{% url 'webapp:subcategory_change' subcategory.pk %}" style="font-size: 12px">&#x270E;</a>#}
-{#                            </td>#}
-{#                        {% endif %}#}
-{#                        {% if perms.webapp.delete_subcategory %}#}
-{#                            <td class="symbol"><a class='delete hiddenbutton'#}
-{#                                                  href="{% url 'webapp:subcategory_delete' subcategory.pk %}"#}
-{#                                                  style="color: red; font-size: 12px    ">&times;</a>#}
-{#                            </td>#}
-{#                        {% endif %}#}
-{#                    </tr>#}
-{#                {% endfor %}#}
+                {#                {% for subcategory in category.subcategories.all %}#}
+                {#                    <tr>#}
+                {#                        <th scope="row"></th>#}
+                {#                        <th scope="row"></th>#}
+                {#                        <td style="padding-left: 40px; font-size: 12px">{{ subcategory.sub_name }}</td>#}
+                {#                        {% if perms.webapp.change_subcategory %}#}
+                {#                            <td class="symbol"><a class='update hiddenbutton'#}
+                {#                                                  href="{% url 'webapp:subcategory_change' subcategory.pk %}" style="font-size: 12px">&#x270E;</a>#}
+                {#                            </td>#}
+                {#                        {% endif %}#}
+                {#                        {% if perms.webapp.delete_subcategory %}#}
+                {#                            <td class="symbol"><a class='delete hiddenbutton'#}
+                {#                                                  href="{% url 'webapp:subcategory_delete' subcategory.pk %}"#}
+                {#                                                  style="color: red; font-size: 12px    ">&times;</a>#}
+                {#                            </td>#}
+                {#                        {% endif %}#}
+                {#                    </tr>#}
+                {#                {% endfor %}#}
                 </tbody>
             {% endfor %}
         </table>
