@@ -7,6 +7,7 @@ from django.contrib.auth.mixins import UserPassesTestMixin
 from django.urls import reverse_lazy
 from .forms import CategoryForm, FullSearchForm
 from django.db.models import Q
+from django.shortcuts import get_object_or_404
 
 
 class IndexView(ListView):
@@ -23,6 +24,14 @@ class ArticleView(DetailView):
     template_name = 'article_detail.html'
     context_key = 'article'
     model = Article
+
+    def get_context_data(self, **kwargs):
+        article = get_object_or_404(Article, id=self.kwargs['pk'])
+        article.views += 1  # инкрементируем счётчик просмотров и обновляем поле в базе данных
+        article.save(update_fields=['views'])
+        context = super().get_context_data(**kwargs)
+        context['views'] = article.views
+        return context
 
 
 class ArticleUpdateView(UserPassesTestMixin, UpdateView):
