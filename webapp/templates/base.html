@@ -48,7 +48,11 @@
                            href="{% url 'accounts:user_detail' user.pk %}">Привет, {{ user.username }}!</a></li>
                     <li class="nav-item active">
                         <a class="nav-link"
-                           href="{% url 'accounts:logout'%}">Выход</a></li>
+                           href="{% url 'accounts:logout' %}">Выход</a></li>
+                {% else %}
+                    <li class="nav-item active">
+                        <a class="nav-link"
+                           href="{% url 'accounts:login' %}">Вход</a></li>
                 {% endif %}
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -79,7 +83,7 @@
 {#</div>#}
 {#      </div>#}
 <div class="container">
-{% block content %}{% endblock %}
+    {% block content %}{% endblock %}
 </div>
 
 
