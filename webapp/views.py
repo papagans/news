@@ -24,7 +24,19 @@ class ArticleUpdateView(UserPassesTestMixin, UpdateView):
     template_name = 'partial/edit.html'
     context_key = 'article'
     model = Article
-    fields = ['title', 'description', 'image', 'user_id']
+    fields = ['title', 'description', 'image', 'user_id', 'category_id']
+    success_url = reverse_lazy('webapp:index')
+
+    def test_func(self):
+        user = self.request.user
+        return user.is_staff
+
+
+class ArticleCreateView(UserPassesTestMixin, CreateView):
+    model = Article
+    template_name = 'partial/add.html'
+    # form_class = CategoryForm
+    fields = ['title', 'description', 'image', 'user_id', 'category_id']
     success_url = reverse_lazy('webapp:index')
 
     def test_func(self):
