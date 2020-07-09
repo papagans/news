@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load widget_tweaks %}
+    <div class="login-block">
+        <h4 style="text-align: center">Упссс, вы нарвались на пасхалку!</h4>
+        <div class="" style="display: flex; justify-content: center; padding-bottom: 50px">
+            {% for error in form.non_field_errors %}
+                <p class="form-error">{{ error }}</p>
+            {% endfor %}
+            {% for field in form %}
+                <div class="row mt-5">
+                    <form method="POST" class="post-form">{% csrf_token %}
+                        {{ field.label }}
+                        <p class="col-3"><label for="{{ field.id_for_label }}">{% if field.field.required %}
+                            *{% endif %}</label></p>
+                        {% if field.errors %}
+                            <p class="col-9 d-flex">{{ field| add_class:'field-error form-control' }}</p>
+                        {% else %}
+                            <p class="col-9 d-flex">{{ field | add_class:'form-control' }}</p>
+                        {% endif %}
+                        {% for error in field.errors %}
+                            <div class="empty col-2 d-flex"></div>
+                            <h1 class="form-error col-10 d-flex" style="color: red">{{ error }}</h1>
+                        {% endfor %}
+                        <p class="text-center"><input type="submit" value="Готово" class="btn"
+                                                      style="background-color: #83B734; color: white"></p>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

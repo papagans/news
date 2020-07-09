@@ -1,11 +1,11 @@
 # Create your views here.
-from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
+from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView, TemplateView
 from .models import Article, Category
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.urls import reverse_lazy
-from .forms import CategoryForm, FullSearchForm
+from .forms import CategoryForm, FullSearchForm, EasterEggForm
 from django.db.models import Q
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.http import JsonResponse
 
 
@@ -198,3 +198,14 @@ def favoritedeleteitem(request):
             break
     request.session['favorites'] = articles
     return JsonResponse({'pk': articles})
+
+
+def easter_egg(request):  # Пасхалочка
+    if request.method == "POST":
+        form = EasterEggForm(request.POST)
+        if form.is_valid():
+            if form.cleaned_data.get('text') == '39':
+                return render(request, 'about_me/about_me.html')
+    else:
+        form = EasterEggForm()
+    return render(request, 'easter_egg.html', {'form': form})

@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from .views import IndexView, ArticleView, CategoryView, CategoryUpdateView, CategoryDeleteView, CategoryCreateView, \
     ArticleUpdateView, ArticleCreateView, ArticleDeleteView, ArticleListView, SearchResultsView, FavoriteView, \
-    favoriteadditem, favoritedeleteitem
+    favoriteadditem, favoritedeleteitem, easter_egg
 
 app_name ='webapp'
 
@@ -23,4 +23,5 @@ urlpatterns = [
     path('article/favorites/', FavoriteView.as_view(), name='favorite_article'),
     path('favoritesadditem/', favoriteadditem, name='add_to_favorites'),
     path('favoritesdeleteitem/', favoritedeleteitem, name='delete_from_favorites'),
+    path('easter_egg/', easter_egg, name='easter_egg'),
 ]

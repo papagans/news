@@ -19,3 +19,13 @@ class CategoryForm(forms.ModelForm):
 
 class FullSearchForm(forms.Form):
     text = forms.CharField(max_length=20, required=False, label='Поиск')
+
+
+class EasterEggForm(forms.Form):
+    text = forms.CharField(max_length=2, required=False, label='Введите последние две цыфры моего телефона')
+    def clean_text(self):
+        text = self.cleaned_data.get('text')
+        if text != '39':
+            raise ValidationError('А вот и нет!')
+        else:
+            return text

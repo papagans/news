@@ -1,5 +1,5 @@
 from .models import Category
-from .forms import FullSearchForm
+from .forms import FullSearchForm, EasterEggForm
 
 
 def category(request):
@@ -18,3 +18,8 @@ def favorite_counter(request):
     else:
         counter = 0
     return {"favorite_counter": counter}
+
+
+def easter_egg_form(request):
+    easter_egg_form = EasterEggForm(request.GET or None)
+    return {"easter_egg_form": easter_egg_form}
