@@ -12,5 +12,9 @@ def get_search_form(request):
 
 
 def favorite_counter(request):
-    counter = len(request.session.get('favorites'))
+    counter = request.session.get('favorites')
+    if counter:
+        counter = len(request.session.get('favorites'))
+    else:
+        counter = 0
     return {"favorite_counter": counter}

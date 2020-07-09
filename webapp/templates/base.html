@@ -39,6 +39,10 @@
                             Категории
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item"
+                                   href="{% url 'webapp:index' %}?views=views">Часто просматриваемые</a>
+                        <a class="dropdown-item"
+                                   href="{% url 'webapp:index' %}?date=date">Свежие</a>
                             {% for category in categories %}
                                 <a class="dropdown-item"
                                    href="{% url 'webapp:article_category' category.pk %}?category={{ category.pk }}">{{ category }}</a>

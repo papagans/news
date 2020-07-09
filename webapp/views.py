@@ -6,7 +6,7 @@ from .models import Article, Category
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.urls import reverse_lazy
 from .forms import CategoryForm, FullSearchForm
-from django.db.models import Q
+from django.db.models import Q, Count
 from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
 
@@ -18,6 +18,12 @@ class IndexView(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data()
+        views = self.request.GET.get('views')
+        date = self.request.GET.get('date')
+        if date:
+            context['articles'] = Article.objects.order_by('-date')
+        if views:
+            context['articles'] = Article.objects.order_by('-views')
         return context
 
 
@@ -182,8 +188,7 @@ def favoriteadditem(request):
     pk = request.POST.get('pk')
     article = get_object_or_404(Article, pk=request.POST.get('pk'))
     articles.append(pk)
-    request.session['favorites'] = articles
-    # request.session['products_count'] = len(products)
+    request.session['favorites'] = articles  # Храню в сессии избранные новости
     return JsonResponse({'pk': article.pk})
 
 
@@ -195,5 +200,4 @@ def favoritedeleteitem(request):
             articles.remove(article_pk)
             break
     request.session['favorites'] = articles
-    # request.session['products_count'] = len(products)
     return JsonResponse({'pk': articles})

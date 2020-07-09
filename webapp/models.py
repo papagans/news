@@ -23,8 +23,8 @@ class Article(models.Model):
     title = models.CharField(max_length=200, verbose_name='Название')
     description = models.TextField(max_length=3000, verbose_name='Описание', null=True, blank=True)
     image = models.ImageField(upload_to='article_image', null=True, blank=True, verbose_name='Фото')
-    date = models.DateTimeField(auto_now_add=True, verbose_name='Дата добавления')
-    views = models.IntegerField('Просмотры', default=0)
+    date = models.DateTimeField(auto_now_add=True, verbose_name='Дата добавления')  # добавил дату создания новости, # для вывода новвых новостей
+    views = models.IntegerField('Просмотры', default=0)  # добавил счетчик просмотров Новостей
 
     def __str__(self):
         return self.title
