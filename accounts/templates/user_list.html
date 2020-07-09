@@ -19,6 +19,7 @@
                 <th scope="col">Пользователь</th>
                 <th class="symbol hiddenbutton" scope="col">E-mail</th>
                 <th class="symbol hiddenbutton" scope="col">Редактировать</th>
+                <th class="symbol hiddenbutton" scope="col">Смена пароля</th>
                 <th class="symbol hiddenbutton" scope="col">Удалить</th>
                 {#                <th class="symbol hiddenbutton" scope="col">Добавить#}
                 {#                    подраздел</th>#}
@@ -36,6 +37,8 @@
                     {% if perms.webapp.change_user %}
                         <td class="symbol"><a class='update hiddenbutton'
                                               href="{% url 'accounts:user_edit' user.pk %}">&#x270E;</a></td>
+                        <td class="symbol"><a class='update hiddenbutton'
+                                              href="{% url 'accounts:user_password_change' user.pk %}">Поменять пароль</a></td>
                     {% endif %}
                     {% if perms.webapp.delete_user %}
                         <td class="symbol"><a class='delete hiddenbutton'

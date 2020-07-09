@@ -1,12 +1,10 @@
-from django.shortcuts import render
-
 # Create your views here.
 from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
 from .models import Article, Category
-from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.urls import reverse_lazy
 from .forms import CategoryForm, FullSearchForm
-from django.db.models import Q, Count
+from django.db.models import Q
 from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
 
@@ -18,12 +16,12 @@ class IndexView(ListView):
     ordering = ['-date']
     paginate_by = 3
 
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data()
+    def get_queryset(self):
         views = self.request.GET.get('views')
         if views:
-            context['articles'] = Article.objects.order_by('-views')
-        return context
+            return Article.objects.order_by('-views')
+        else:
+            return Article.objects.all()
 
 
 class ArticleView(DetailView):
