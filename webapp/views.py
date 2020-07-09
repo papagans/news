@@ -3,11 +3,12 @@ from django.shortcuts import render
 # Create your views here.
 from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
 from .models import Article, Category
-from django.contrib.auth.mixins import UserPassesTestMixin
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.urls import reverse_lazy
 from .forms import CategoryForm, FullSearchForm
 from django.db.models import Q
 from django.shortcuts import get_object_or_404
+from django.http import JsonResponse
 
 
 class IndexView(ListView):
@@ -154,3 +155,45 @@ class SearchResultsView(ListView):
             if key != 'page':
                 data[key] = self.request.GET.get(key)
         return data
+
+
+class FavoriteView(ListView):
+    model = Article
+    template_name = 'index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        favorites = self._prepare_favorites()
+        context['articles'] = favorites
+        context['favorites'] = Article.objects.all()
+        return context
+
+    def _prepare_favorites(self):
+        favorites = self.request.session.get('favorites', [])
+        favorite_list = []
+        for pk in favorites:
+            article = Article.objects.get(pk=pk)
+            favorite_list.append(article)
+        return favorite_list
+
+
+def favoriteadditem(request):
+    articles = request.session.get('favorites', [])
+    pk = request.POST.get('pk')
+    article = get_object_or_404(Article, pk=request.POST.get('pk'))
+    articles.append(pk)
+    request.session['favorites'] = articles
+    # request.session['products_count'] = len(products)
+    return JsonResponse({'pk': article.pk})
+
+
+def favoritedeleteitem(request):
+    articles = request.session.get('favorites', [])
+    pk = request.POST.get('pk')
+    for article_pk in articles:
+        if article_pk == pk:
+            articles.remove(article_pk)
+            break
+    request.session['favorites'] = articles
+    # request.session['products_count'] = len(products)
+    return JsonResponse({'pk': articles})

@@ -10,6 +10,10 @@
         {% endif %}
         <h1 class="display-4">{{ article.title }}</h1>
         <p class="lead">{{ article.description }}</p>
+    <hr>
+        <p class="lead">Просмотров: {{ article.views }}</p>
+    <hr>
+        <p class="lead">Создана: {{ article.date }}</p>
         <hr class="my-4">
         {% if perms.webapp.article_edit %}
         <a class="btn btn-primary btn-lg" href="{% url 'webapp:article_edit' article.pk %}"

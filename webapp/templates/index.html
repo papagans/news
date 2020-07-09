@@ -13,30 +13,34 @@
                     {% endif %}
                     <div class="card-body">
                         <h5 class="card-title">{{ article.title }}</h5>
-                    <hr>
+                        <hr>
                         <p class="card-text">Категория: {{ article.category_id }}</p>
-                    <hr>
+                        <hr>
                         <p class="card-text text-truncate">{{ article.description }}</p>
-                    <hr>
+                        <hr>
                         <p class="card-text">Создана: {{ article.date }}</p>
                         <div class="card-body">
                             <a href="{% url 'webapp:article_detail' article.pk %}" class="card-link">Подробнее...</a>
                             {% if perms.webapp.article_edit %}
-                            <a href="{% url 'webapp:article_edit' article.pk %}" class="card-link">Редактировать</a>
+                                <a href="{% url 'webapp:article_edit' article.pk %}" class="card-link">Редактировать</a>
                             {% endif %}
-                        <hr>
-                        <p class="card-text">Просмотров: {{ article.views }}</p>
+                            <hr>
+                            <p class="card-text">Просмотров: {{ article.views }}</p>
+                            <hr>
+                            {% if article in favorites %}
+                                <a href="{% url 'webapp:delete_from_favorites' %}" class="favorite-add"
+                                   data-product-pk="{{ article.pk }}"
+                                   id="add-to-favorites-{{ article.pk }}">Удалить из избранного</a>
+                            {% else %}
+                                <a href="{% url 'webapp:add_to_favorites' %}" class="favorite-add"
+                                   data-product-pk="{{ article.pk }}"
+                                   id="add-to-favorites-{{ article.pk }}">В избранное</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
             </div>
-
         {% endfor %}
-    {% if articles_in_category %}
-    {% for article in articles_in_category %}
-        <h1>{{ article }}</h1>
-        {% endfor %}
-    {% endif %}
     </div>
 
 {% endblock %}

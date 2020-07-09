@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 from .views import IndexView, ArticleView, CategoryView, CategoryUpdateView, CategoryDeleteView, CategoryCreateView, \
-    ArticleUpdateView, ArticleCreateView, ArticleDeleteView, ArticleListView, SearchResultsView
+    ArticleUpdateView, ArticleCreateView, ArticleDeleteView, ArticleListView, SearchResultsView, FavoriteView, \
+    favoriteadditem, favoritedeleteitem
 
 app_name ='webapp'
 
@@ -19,4 +20,7 @@ urlpatterns = [
     path('category/add/', CategoryCreateView.as_view(), name='category_add'),
     path('article_category/<int:pk>', ArticleListView.as_view(), name='article_category'),
     path('article/search/results/', SearchResultsView.as_view(), name='search_results'),
+    path('article/favorites/', FavoriteView.as_view(), name='favorite_article'),
+    path('favoritesadditem/', favoriteadditem, name='add_to_favorites'),
+    path('favoritesdeleteitem/', favoritedeleteitem, name='delete_from_favorites'),
 ]

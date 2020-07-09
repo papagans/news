@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'webapp.context_processors.category',
                 'webapp.context_processors.get_search_form',
+                'webapp.context_processors.favorite_counter',
             ],
         },
     },
