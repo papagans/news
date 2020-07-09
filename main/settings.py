@@ -124,10 +124,16 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
+HOST_NAME = 'http://localhost:8000'
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = '/uploads/'
 LOGOUT_REDIRECT_URL = 'webapp:index'
 LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL ='webapp:index'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'vitalyyadryshnikov@gmail.com'  # ваш user
+EMAIL_HOST_PASSWORD = '464716Je'  # ваш пароль
+EMAIL_PORT = 587
