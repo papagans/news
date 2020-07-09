@@ -15,6 +15,7 @@ class IndexView(ListView):
     template_name = 'index.html'
     model = Article
     context_object_name = "articles"
+    paginate_by = 3
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data()
@@ -139,7 +140,7 @@ class SearchResultsView(ListView):
     model = Article
     template_name = 'index.html'
     context_object_name = 'articles'
-    # paginate_by = 2
+    # paginate_by = 3
     # paginate_orphans = 1
 
     def get_url(self):
