@@ -13,6 +13,7 @@ from accounts.models import Token
 from django.conf import settings
 from django.template.loader import get_template
 
+
 class UserDetailView(DetailView):
     model = User
     template_name = 'user_detail.html'
@@ -27,8 +28,10 @@ class UserListView(ListView):
     model = User
     context_object_name = "users"
 
+
 def test_func(self):
-        return self.get_object() == self.request.user
+    return self.get_object() == self.request.user
+
 
 class UserUpdateView(UpdateView):
     model = User
@@ -99,10 +102,6 @@ def password_reset_email_view(request):
             token = Token.objects.create(user=user)
             redirect_url = 'accounts:password_reset_form'
             url = HOST_NAME + reverse(redirect_url, kwargs={'token': token})
-            # send_token(user,
-            #            'Вы запросили восстановление пароля на сайте localhost:8000.',
-            #            'Для ввода нового пароля перейдите по ссылке: {url}',
-            #            redirect_url='accounts:password_reset_form')
             context = {
                 'user': user.first_name,
                 'url': url,
@@ -111,7 +110,8 @@ def password_reset_email_view(request):
                 'text_2': 'Просто нажмите на кнопку ниже и создайте новый пароль. Проще не бывает!',
                 'btn_text': 'Восстановить пароль'
             }
-            send_mail('Восстановление пароля News', 'Восстановление пароля News', settings.EMAIL_HOST_USER, [user.email],
+            send_mail('Восстановление пароля News', 'Восстановление пароля News', settings.EMAIL_HOST_USER,
+                      [user.email],
                       html_message=get_template('password_reset_emailing.html').render(context),
                       fail_silently=False)
         return render(request, 'password_reset_confirm.html')
