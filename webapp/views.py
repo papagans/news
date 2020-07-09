@@ -15,6 +15,7 @@ class IndexView(ListView):
     template_name = 'index.html'
     model = Article
     context_object_name = "articles"
+    # ordering = '-date'
     paginate_by = 3
 
     def get_context_data(self, *, object_list=None, **kwargs):
