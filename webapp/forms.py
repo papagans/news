@@ -10,7 +10,6 @@ class CategoryForm(forms.ModelForm):
 
     def clean_category_name(self):
         title = self.cleaned_data.get('title')
-        # if Category.objects.filter(title__iexact=title):
         if Category.objects.filter(title__icontains=title):
             raise ValidationError('Категория с таким названием уже существует!')
         else:
@@ -23,6 +22,7 @@ class FullSearchForm(forms.Form):
 
 class EasterEggForm(forms.Form):
     text = forms.CharField(max_length=2, required=False, label='Введите последние две цыфры моего телефона')
+
     def clean_text(self):
         text = self.cleaned_data.get('text')
         if text != '39':

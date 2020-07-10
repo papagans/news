@@ -134,6 +134,6 @@ LOGIN_REDIRECT_URL ='webapp:index'
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'vitalyyadryshnikov@gmail.com'  # ваш user
-EMAIL_HOST_PASSWORD = '464716Je'  # ваш пароль
+EMAIL_HOST_USER = 'noreply.vitaly@gmail.com'  # ваш user
+EMAIL_HOST_PASSWORD = 'noreply123'  # ваш пароль
 EMAIL_PORT = 587

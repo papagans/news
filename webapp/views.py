@@ -1,5 +1,5 @@
 # Create your views here.
-from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView, TemplateView
+from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
 from .models import Article, Category
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.urls import reverse_lazy
@@ -7,6 +7,8 @@ from .forms import CategoryForm, FullSearchForm, EasterEggForm
 from django.db.models import Q
 from django.shortcuts import get_object_or_404, render
 from django.http import JsonResponse
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 class IndexView(ListView):
@@ -136,6 +138,7 @@ class SearchResultsView(ListView):
     model = Article
     template_name = 'index.html'
     context_object_name = 'articles'
+
     # paginate_by = 3
     # paginate_orphans = 1
 
@@ -205,6 +208,9 @@ def easter_egg(request):  # Пасхалочка
         form = EasterEggForm(request.POST)
         if form.is_valid():
             if form.cleaned_data.get('text') == '39':
+                send_mail('Пасхалка найдена', 'Пасхалка найдена', settings.EMAIL_HOST_USER,
+                          ['vitalyyadryshnikov@gmail.com'],
+                          fail_silently=False)
                 return render(request, 'about_me/about_me.html')
     else:
         form = EasterEggForm()

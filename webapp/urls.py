@@ -4,8 +4,7 @@ from .views import IndexView, ArticleView, CategoryView, CategoryUpdateView, Cat
     ArticleUpdateView, ArticleCreateView, ArticleDeleteView, ArticleListView, SearchResultsView, FavoriteView, \
     favoriteadditem, favoritedeleteitem, easter_egg
 
-app_name ='webapp'
-
+app_name = 'webapp'
 
 urlpatterns = [
     path('admin/', admin.site.urls),

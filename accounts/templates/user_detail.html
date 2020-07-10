@@ -14,7 +14,7 @@
             {% if perms.webapp.change_category %}
                 <a class='card-link' href="{% url 'accounts:user_edit' user.pk %}">Редактировать чувака</a></a>
             {% endif %}
-        <hr>
+            <hr>
             <a href="{% url 'accounts:user_delete' user.pk %}" class="card-link">Удалить чувака</a>
         </div>
     </div>
