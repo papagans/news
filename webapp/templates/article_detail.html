@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Article{% endblock %}
+{% block content %}
+    <div class="jumbotron">
+        {% if article.image %}
+            <img src="{{ article.image.url }}" class="card-img-top" alt="{{ category.category_name }}">
+        {% else %}
+            <img src="{% static 'default_image.png' %}" class="card-img-top" alt="No photo">
+        {% endif %}
+        <h1 class="display-4">{{ article.title }}</h1>
+        <p class="lead">{{ article.description }}</p>
+    <hr>
+        <p class="lead">Просмотров: {{ article.views }}</p>
+    <hr>
+        <p class="lead">Создана: {{ article.date }}</p>
+        <hr class="my-4">
+        {% if perms.webapp.article_edit %}
+        <a class="btn btn-primary btn-lg" href="{% url 'webapp:article_edit' article.pk %}"
+           role="button">Редактировать</a>
+        <a class="btn btn-danger btn-lg" href="{% url 'webapp:article_delete' article.pk %}"
+           role="button">Удалить</a>
+    {% endif %}
+    </div>
+{% endblock %}

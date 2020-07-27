@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}User Detail{% endblock %}
+{% block content %}
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'user_no_photo.jpg' %}" class="card-img-top" alt="{{ user.username }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ user.username }}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{% if user.email %}{{ user.email }}{% endif %}</li>
+        </ul>
+        <div class="card-body">
+            {% if perms.webapp.change_category %}
+                <a class='card-link' href="{% url 'accounts:user_edit' user.pk %}">Редактировать чувака</a></a>
+            {% endif %}
+            <hr>
+            <a href="{% url 'accounts:user_delete' user.pk %}" class="card-link">Удалить чувака</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Categories{% endblock %}
+{% block content %}
+    <form method="POST" action="#">
+        {% csrf_token %}
+        <table class="table" style="line-height: 15px">
+            <h3 style="text-align: center">Категории</h3>
+            {% if perms.webapp.add_category %}
+                <div class="row">
+                    <a href="{% url 'webapp:category_add' %}" class="btn ml-5 my-3 hiddenbutton"
+                       style="background-color: #83B734; color: white">Добавить
+                        категорию</a>
+                </div>
+            {% endif %}
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Родительская категория</th>
+                <th class="symbol hiddenbutton" scope="col">Категория</th>
+                <th class="symbol hiddenbutton" scope="col">Редактировать</th>
+                <th class="symbol hiddenbutton" scope="col">Удалить</th>
+            </tr>
+            </thead>
+            {% for category in categories %}
+                <tbody>
+                <tr style="background-color: lavender">
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{% if category.subcategory %}{{ category.subcategory }}{% endif %}</td>
+                    <td class="symbol">{% if category.title %}
+                        {{ category.title }}{% endif %}</td>
+                    {% if perms.webapp.change_category %}
+                        <td class="symbol"><a class='update hiddenbutton'
+                                              href="{% url 'webapp:category_edit' category.pk %}">&#x270E;</a></td>
+                    {% endif %}
+                    {% if perms.webapp.delete_category %}
+                        <td class="symbol"><a class='delete hiddenbutton'
+                                              href="{% url 'webapp:category_delete' category.pk %}" style="color: red">&times;</a>
+                        </td>
+                        </tr>
+                    {% endif %}
+
+                </tbody>
+            {% endfor %}
+        </table>
+    </form>
+{% endblock %}

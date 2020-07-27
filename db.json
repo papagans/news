@@ -1,0 +1,391 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$4VUcZgW9Mc52$3ukBk2u83TFCGRkP4heSQKlIMfE7QpYoDbUutEW85rA=",
+    "last_login": "2020-07-09T19:55:15.387Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-07-08T11:12:41.216Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$rWCHJegE41uj$6Sf5hxseJOeCo7lyZaCaL5u7dFy8KzxSoZv11jepVu0=",
+    "last_login": "2020-07-09T19:56:07.369Z",
+    "is_superuser": false,
+    "username": "test",
+    "first_name": "",
+    "last_name": "",
+    "email": "test@mail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-07-08T17:48:57.312Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$2wl2quqFOxYM$TMDqxKUplbr6MdiolrD9cSYBujxjqdpkyNYMEaz5OJ4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "test1",
+    "first_name": "",
+    "last_name": "",
+    "email": "test1@mail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-07-08T18:17:47.300Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$urIVgNLUyTSB$W/pppJik7TtzANndqkI6x0xen0kK5x1hITPK34D/hNs=",
+    "last_login": "2020-07-09T14:22:25.272Z",
+    "is_superuser": false,
+    "username": "test2",
+    "first_name": "",
+    "last_name": "",
+    "email": "diesel.kg@mail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-07-09T14:14:37.907Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "8ql68vhl2z4wi5tar5jr3223p0oif7eg",
+  "fields": {
+    "session_data": "ZGVjMGM2MzkxMDg3NzIwNWZkM2E5YzAxMDUwNjBiNDdlMjU4OGNjODp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0ZjAzYTU1ZTU4OTg4NmExNWI4OGI2MjMxNjhlOTM0MTA0MzJlNWExIn0=",
+    "expire_date": "2020-07-23T09:17:08.587Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "9crnizriec1pd7xnxqq2v42zd1my5b1j",
+  "fields": {
+    "session_data": "ZGVjMGM2MzkxMDg3NzIwNWZkM2E5YzAxMDUwNjBiNDdlMjU4OGNjODp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0ZjAzYTU1ZTU4OTg4NmExNWI4OGI2MjMxNjhlOTM0MTA0MzJlNWExIn0=",
+    "expire_date": "2020-07-22T19:37:12.089Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "h9h6o6oq1437uyky8jlmnekoyyu841an",
+  "fields": {
+    "session_data": "ZTE5MzM1NWIwNjg5YmJkMzMwMmVjYjU1YWQwZTRkMzU0YmQyZTliNzp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0ZjAzYTU1ZTU4OTg4NmExNWI4OGI2MjMxNjhlOTM0MTA0MzJlNWExIiwiZmF2b3JpdGVzIjpbIjIiLCIzIiwiMiIsIjIiLCIyIiwiMiJdfQ==",
+    "expire_date": "2020-07-23T09:37:10.970Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "jodxl9mts9yxinazqgy9zh5pxx7m6wl0",
+  "fields": {
+    "session_data": "ZGVjMGM2MzkxMDg3NzIwNWZkM2E5YzAxMDUwNjBiNDdlMjU4OGNjODp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0ZjAzYTU1ZTU4OTg4NmExNWI4OGI2MjMxNjhlOTM0MTA0MzJlNWExIn0=",
+    "expire_date": "2020-07-23T11:28:53.858Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "rx0zj555v3vb3ofzp8jlwkm54ave1tyf",
+  "fields": {
+    "session_data": "ODBhZTFmOGUwNTkwMWUzNjcyOWRjNDhmM2VmOWE1MDVkMmZiYmYyYzp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0ZjAzYTU1ZTU4OTg4NmExNWI4OGI2MjMxNjhlOTM0MTA0MzJlNWExIiwiZmF2b3JpdGVzIjpbIjgiXX0=",
+    "expire_date": "2020-07-23T10:13:26.845Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "tprqf73xawp232sklwh7wbohnesg1tln",
+  "fields": {
+    "session_data": "ZjRmNzNhYjkwMmZkNDQ2NTRiYmVkYmMwNzZmZTZiOWI4MTQ2OTE2ODp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0ZjAzYTU1ZTU4OTg4NmExNWI4OGI2MjMxNjhlOTM0MTA0MzJlNWExIiwiZmF2b3JpdGVzIjpbXX0=",
+    "expire_date": "2020-07-23T19:50:29.935Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "xf8bl27c61h5erq8jro72u2vbz3yqv8k",
+  "fields": {
+    "session_data": "YzNiODAyNTI5MjE5NDViODc3ODk0ZGI0M2RjZWZlOWUzYzViNmFhZDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0ZjAzYTU1ZTU4OTg4NmExNWI4OGI2MjMxNjhlOTM0MTA0MzJlNWExIiwiZmF2b3JpdGVzIjpbIjIiLCI0IiwiMyIsIjYiXX0=",
+    "expire_date": "2020-07-23T09:54:55.803Z"
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 1,
+  "fields": {
+    "title": "\u0414\u043d\u0435\u0432\u043d\u044b\u0435 \u043d\u043e\u0432\u043e\u0441\u0442\u0438",
+    "subcategory": 2
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 2,
+  "fields": {
+    "title": "\u0423\u0442\u0440\u0435\u043d\u043d\u0438\u0435 \u043d\u043e\u0432\u043e\u0441\u0442\u0438",
+    "subcategory": null
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 3,
+  "fields": {
+    "title": "\u0412\u0435\u0447\u0435\u0440\u043d\u0438\u0435 \u043d\u043e\u0432\u043e\u0441\u0442\u0438",
+    "subcategory": 1
+  }
+},
+{
+  "model": "webapp.category",
+  "pk": 10,
+  "fields": {
+    "title": "8:00-9:00",
+    "subcategory": 1
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 2,
+  "fields": {
+    "category_id": 3,
+    "user_id": 1,
+    "title": "\u044d\u0442\u043e \u0432\u0442\u043e\u0440\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c",
+    "description": "\u042d\u0442\u043e \u043c\u043e\u044f \u0432\u0442\u043e\u0440\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c\u042d\u0442\u043e \u043c\u043e\u044f \u0432\u0442\u043e\u0440\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c",
+    "image": "article_image/1.jpg",
+    "date": "2020-07-08T21:38:38.580Z",
+    "views": 15
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 3,
+  "fields": {
+    "category_id": 1,
+    "user_id": 1,
+    "title": "\u042d\u0442\u043e \u043c\u043e\u044f \u0442\u0440\u0435\u0442\u044c\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c",
+    "description": "\u0412\u0441\u0435\u043c \u043f\u0440\u0438\u0432\u0435\u0442! \u042d\u0442\u043e \u043c\u043e\u044f \u0442\u0440\u0435\u0442\u044c\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c",
+    "image": "article_image/2.jpg",
+    "date": "2020-07-08T21:38:38.580Z",
+    "views": 3
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 4,
+  "fields": {
+    "category_id": 1,
+    "user_id": 1,
+    "title": "\u042d\u0442\u043e \u043c\u043e\u044f \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c",
+    "description": "\u042d\u0442\u043e \u043c\u043e\u044f \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c! \u042d\u0442\u043e \u043c\u043e\u044f \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c! \u042d\u0442\u043e \u043c\u043e\u044f \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c! \u042d\u0442\u043e \u043c\u043e\u044f \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c",
+    "image": "",
+    "date": "2020-07-08T21:38:38.580Z",
+    "views": 0
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 5,
+  "fields": {
+    "category_id": 2,
+    "user_id": 1,
+    "title": "\u042d\u0442\u043e \u043f\u044f\u0442\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c!",
+    "description": "\u042d\u0442\u043e \u043f\u044f\u0442\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c!\u042d\u0442\u043e \u043f\u044f\u0442\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c!\u042d\u0442\u043e \u043f\u044f\u0442\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c!\u042d\u0442\u043e \u043f\u044f\u0442\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c!\u042d\u0442\u043e \u043f\u044f\u0442\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c!\u042d\u0442\u043e \u043f\u044f\u0442\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c!\u042d\u0442\u043e \u043f\u044f\u0442\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c!\u042d\u0442\u043e \u043f\u044f\u0442\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c!\u043c\u042d\u0442\u043e \u043f\u044f\u0442\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c!",
+    "image": "",
+    "date": "2020-07-08T21:38:38.580Z",
+    "views": 0
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 6,
+  "fields": {
+    "category_id": null,
+    "user_id": 3,
+    "title": "\u042d\u0442\u043e \u043c\u043e\u044f \u041f\u0435\u0440\u0432\u0430\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u043d\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c",
+    "description": "\u042d\u0442\u043e \u043c\u043e\u044f \u041f\u0435\u0440\u0432\u0430\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u043d\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c\u042d\u0442\u043e \u043c\u043e\u044f \u041f\u0435\u0440\u0432\u0430\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u043d\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c\u042d\u0442\u043e \u043c\u043e\u044f \u041f\u0435\u0440\u0432\u0430\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u043d\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c\u042d\u0442\u043e \u043c\u043e\u044f \u041f\u0435\u0440\u0432\u0430\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u043d\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c\u042d\u0442\u043e \u043c\u043e\u044f \u041f\u0435\u0440\u0432\u0430\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u043d\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c\u043c\u043c\u042d\u0442\u043e \u043c\u043e\u044f \u041f\u0435\u0440\u0432\u0430\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u043d\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c\u042d\u0442\u043e \u043c\u043e\u044f \u041f\u0435\u0440\u0432\u0430\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u043d\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c\u042d\u0442\u043e \u043c\u043e\u044f \u041f\u0435\u0440\u0432\u0430\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u043d\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c\u042d\u0442\u043e \u043c\u043e\u044f \u041f\u0435\u0440\u0432\u0430\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u043d\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c\u044e",
+    "image": "",
+    "date": "2020-07-08T21:38:38.580Z",
+    "views": 2
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 7,
+  "fields": {
+    "category_id": null,
+    "user_id": 1,
+    "title": "\u041d\u043e\u0432\u043e\u0441\u0442\u044c 6 \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430 \u0447\u0435\u0440\u0435\u0437 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438",
+    "description": "\u041d\u043e\u0432\u043e\u0441\u0442\u044c 6 \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430 \u0447\u0435\u0440\u0435\u0437 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438\u041d\u043e\u0432\u043e\u0441\u0442\u044c 6 \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430 \u0447\u0435\u0440\u0435\u0437 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438\u041d\u043e\u0432\u043e\u0441\u0442\u044c 6 \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430 \u0447\u0435\u0440\u0435\u0437 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438\u041d\u043e\u0432\u043e\u0441\u0442\u044c 6 \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430 \u0447\u0435\u0440\u0435\u0437 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438\u041d\u043e\u0432\u043e\u0441\u0442\u044c 6 \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430 \u0447\u0435\u0440\u0435\u0437 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438\u041d\u043e\u0432\u043e\u0441\u0442\u044c 6 \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430 \u0447\u0435\u0440\u0435\u0437 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438\u041d\u043e\u0432\u043e\u0441\u0442\u044c 6 \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430 \u0447\u0435\u0440\u0435\u0437 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438",
+    "image": "",
+    "date": "2020-07-08T21:38:38.580Z",
+    "views": 16
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 8,
+  "fields": {
+    "category_id": 3,
+    "user_id": 1,
+    "title": "\u041f\u0435\u0440\u0432\u0430\u044f \u041d\u043e\u0432\u043e\u0441\u0442\u044c",
+    "description": "\u041f\u0435\u0440\u0432\u0430\u044f \u041d\u043e\u0432\u043e\u0441\u0442\u044c\u041f\u0435\u0440\u0432\u0430\u044f \u041d\u043e\u0432\u043e\u0441\u0442\u044c\u041f\u0435\u0440\u0432\u0430\u044f \u041d\u043e\u0432\u043e\u0441\u0442\u044c\u041f\u0435\u0440\u0432\u0430\u044f \u041d\u043e\u0432\u043e\u0441\u0442\u044c\u041f\u0435\u0440\u0432\u0430\u044f \u041d\u043e\u0432\u043e\u0441\u0442\u044c",
+    "image": "",
+    "date": "2020-07-08T21:38:38.580Z",
+    "views": 11
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 9,
+  "fields": {
+    "category_id": 1,
+    "user_id": 1,
+    "title": "\u042d\u0442\u043e \u041d\u043e\u0432\u043e\u0441\u0442\u044c \u0434\u043b\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u0432\u044b\u0432\u043e\u0434\u0430 \u043f\u043e \u0434\u0430\u0442\u0435",
+    "description": "\u042d\u0442\u043e \u041d\u043e\u0432\u043e\u0441\u0442\u044c \u0434\u043b\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u0432\u044b\u0432\u043e\u0434\u0430 \u043f\u043e \u0434\u0430\u0442\u0435\u042d\u0442\u043e \u041d\u043e\u0432\u043e\u0441\u0442\u044c \u0434\u043b\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u0432\u044b\u0432\u043e\u0434\u0430 \u043f\u043e \u0434\u0430\u0442\u0435\u042d\u0442\u043e \u041d\u043e\u0432\u043e\u0441\u0442\u044c \u0434\u043b\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u0432\u044b\u0432\u043e\u0434\u0430 \u043f\u043e \u0434\u0430\u0442\u0435\u042d\u0442\u043e \u041d\u043e\u0432\u043e\u0441\u0442\u044c \u0434\u043b\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u0432\u044b\u0432\u043e\u0434\u0430 \u043f\u043e \u0434\u0430\u0442\u0435\u042d\u0442\u043e \u041d\u043e\u0432\u043e\u0441\u0442\u044c \u0434\u043b\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u0432\u044b\u0432\u043e\u0434\u0430 \u043f\u043e \u0434\u0430\u0442\u0435",
+    "image": "",
+    "date": "2020-07-09T11:32:28.808Z",
+    "views": 0
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 10,
+  "fields": {
+    "category_id": 3,
+    "user_id": 3,
+    "title": "\u041d\u043e\u0432\u043e\u0441\u0442\u044c \u0434\u043b\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u044f",
+    "description": "\u041d\u043e\u0432\u043e\u0441\u0442\u044c \u0434\u043b\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u044f\u041d\u043e\u0432\u043e\u0441\u0442\u044c \u0434\u043b\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u044f\u041d\u043e\u0432\u043e\u0441\u0442\u044c \u0434\u043b\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u044f\u041d\u043e\u0432\u043e\u0441\u0442\u044c \u0434\u043b\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u044f",
+    "image": "",
+    "date": "2020-07-10T07:20:07.880Z",
+    "views": 0
+  }
+},
+{
+  "model": "accounts.token",
+  "pk": 1,
+  "fields": {
+    "user": 7,
+    "token": "45af5900-ff9f-41f7-ab59-189a71bd2b2f"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2020-07-08T12:27:37.803Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "\u0414\u043d\u0435\u0432\u043d\u044b\u0435 \u043d\u043e\u0432\u043e\u0441\u0442\u0438",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2020-07-08T12:27:49.972Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "\u0423\u0442\u0440\u0435\u043d\u043d\u0438\u0435 \u043d\u043e\u0432\u043e\u0441\u0442\u0438",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2020-07-08T12:28:02.865Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "\u0412\u0435\u0447\u0435\u0440\u043d\u0438\u0435 \u043d\u043e\u0432\u043e\u0441\u0442\u0438",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2020-07-08T12:28:11.428Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "\u0414\u043d\u0435\u0432\u043d\u044b\u0435 \u043d\u043e\u0432\u043e\u0441\u0442\u0438",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"subcategory\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2020-07-08T12:28:47.542Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "\u0412\u0435\u0447\u0435\u0440\u043d\u0438\u0435 \u043d\u043e\u0432\u043e\u0441\u0442\u0438",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"subcategory\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2020-07-08T12:53:03.647Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "\u041f\u0435\u0440\u0432\u0430\u044f \u041d\u043e\u0432\u043e\u0441\u0442\u044c",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2020-07-08T13:12:05.740Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "\u044d\u0442\u043e \u0432\u0442\u043e\u0440\u0430\u044f \u043d\u043e\u0432\u043e\u0441\u0442\u044c",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2020-07-08T17:40:13.441Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "2",
+    "object_repr": "test",
+    "action_flag": 3,
+    "change_message": ""
+  }
+}
+]

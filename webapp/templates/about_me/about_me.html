@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    <div class="jumbotron">
+        <h1 class="display-4">Всем привет! А вот и я!</h1>
+        <img src="{% static 'me_photo.jpg' %}" class="card-img-top" alt="me">
+        <p class="lead">Меня зовут Виталий, я выпускник курсов Attractor school. Люблю Python & Django framework!
+            Надеюсь
+            Вам понравился результат тестового задания(было очень интересно). Если да, жмите кнопку ниже. Добавляйтесь в други!)
+        </p>
+        <hr class="my-4">
+        <p>На это тестовое задание я потратил около 14 часов непрерывного времени. Ссылка на проект:
+            <a href="https://github.com/papagans/news">https://github.com/papagans/news</a>
+        <hr>
+        Ссылка на мой Telegram: <a href="https://t.me/papagans312">@papagans312</a>
+        <hr>
+        Так же Вы можете связаться со мной по номеру: +996700833339
+        </p>
+        <a class="btn btn-primary btn-lg" href="https://www.facebook.com/profile.php?id=100010772014746" role="button">Узнать
+            больше</a>
+    </div>
+{% endblock %}
